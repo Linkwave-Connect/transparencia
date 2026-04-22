@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portal da Transparência | Linkwave Connect</title>
+    <link rel="icon" type="image/png" href="https://image.openwave.net.br/image/012a0895-a13c-410a-9725-b7a7bf89b065.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brand: { dark: '#050505', card: '#0F0F0F', border: '#1F1F1F', blue: '#3b82f6', cyan: '#06b6d4', green: '#10b981', gray: '#888888', purple: '#8b5cf6' } },
+                    animation: { 'fade-in': 'fadeIn 0.5s ease-out forwards' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e5e5e5; overflow-x: hidden; overscroll-behavior-y: none; }
+        .bg-grid { background-image: linear-gradient(#ffffff05 1px, transparent 1px), linear-gradient(90deg, #ffffff05 1px, transparent 1px); background-size: 30px 30px; }
+        .glass-nav { 
+            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); backface-visibility: hidden; will-change: transform, backdrop-filter;
+        }
+        .glass-card { 
+            background: rgba(15, 15, 15, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid #1F1F1F; transition: all 0.3s ease; 
+            transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); backface-visibility: hidden; will-change: transform, backdrop-filter;
+        }
+        .glass-card:hover { border-color: rgba(6, 182, 212, 0.4); transform: translateY(-4px); box-shadow: 0 10px 40px -10px rgba(6, 182, 212, 0.15); }
+        .text-gradient { background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cyan selection:text-white flex flex-col min-h-screen relative">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute inset-0 bg-grid opacity-30 transform-gpu"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] md:h-[600px] bg-brand-cyan/10 rounded-full blur-[80px] md:blur-[120px] transform-gpu"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="https://linkwaveconnect.com.br" class="flex items-center gap-3 group shrink-0">
+                    <img src="https://linkwaveconnect.com.br/assets/linkwaveconnect.png" alt="Linkwave" class="h-8 sm:h-10 md:h-12 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" style="image-rendering: -webkit-optimize-contrast; transform-origin: left center;">
+                    <div class="h-6 w-px bg-brand-border hidden md:block"></div>
+                    <span class="font-display font-bold text-white text-sm md:text-base hidden xl:block group-hover:text-brand-cyan transition-colors">Transparência</span>
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-1 p-1 bg-brand-dark/50 rounded-xl border border-brand-border/50">
+                    <a href="https://linkwaveconnect.com.br/#hosting" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent whitespace-nowrap">Cloud & VPS</a>
+                    <a href="https://linkwaveconnect.com.br/#isp" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent flex items-center gap-2 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>Internet</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://linkwaveconnect.com.br/midia/" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-purple-400 hover:text-white hover:bg-purple-500/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-1 xl:gap-2"><i class="fa-solid fa-video"></i> Mídia</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://tools.linkwaveconnect.com.br" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent whitespace-nowrap flex items-center gap-1 xl:gap-2"><i class="fa-solid fa-toolbox"></i> Ferramentas</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://openwave.net.br" target="_blank" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-brand-blue hover:text-white hover:bg-brand-blue/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-1 xl:gap-2"><i class="fa-solid fa-cubes"></i> Ecossistema</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <!-- ITEM ATIVO: Adicionado bg-cyan-500/10 e border-cyan-500/30 -->
+                    <a href="https://transparencia.linkwaveconnect.com.br/" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 whitespace-nowrap flex items-center gap-1 xl:gap-2" title="Portal da Transparência"><i class="fa-solid fa-scale-balanced"></i> Transp.</a>
+                </div>
+
+                <div class="flex items-center gap-2 md:gap-4 shrink-0">
+                    <a href="https://wa.me/551145804215?text=Olá! Gostaria de falar com a Ouvidoria / Transparência." target="_blank" class="bg-brand-green hover:bg-green-600 text-black h-9 px-3 md:px-4 rounded-lg text-xs font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:hidden pb-3 -mt-1 overflow-x-auto no-scrollbar flex gap-2 w-full border-t border-brand-border/30 pt-3">
+                <a href="https://linkwaveconnect.com.br/#hosting" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap">Cloud & VPS</a>
+                <a href="https://linkwaveconnect.com.br/#isp" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>Internet</a>
+                <a href="https://linkwaveconnect.com.br/midia/" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-purple-400 border border-purple-500/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-video"></i>Mídia</a>
+                <a href="https://tools.linkwaveconnect.com.br" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-toolbox"></i>Ferramentas</a>
+                <a href="https://openwave.net.br" target="_blank" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-brand-blue border border-brand-blue/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-cubes"></i>Ecossistema</a>
+                <!-- ITEM ATIVO MOBILE: Adicionado bg-cyan-500/10 e texto branco -->
+                <a href="https://transparencia.linkwaveconnect.com.br/" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-cyan-500/10 border border-cyan-500/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-scale-balanced"></i>Transparência</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-xs font-bold text-brand-cyan mb-6 uppercase tracking-wider">
+                <i class="fa-solid fa-file-contract"></i> Portal Público
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white leading-tight">
+                Nosso compromisso é com a <span class="text-gradient">Transparência.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Acesse facilmente nossos registros regulatórios da Anatel, informações de CNPJ, contratos padrão e termos de responsabilidade (SLA e LGPD).
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto mb-20 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 bg-[#111] p-4 rounded-2xl border border-brand-border">
+                <div class="relative w-full md:w-96">
+                    <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar documento..." class="w-full bg-[#050505] border border-brand-border text-white text-sm rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-brand-cyan transition-all">
+                </div>
+                <div id="category-filters" class="flex overflow-x-auto no-scrollbar gap-2 w-full md:w-auto pb-2 md:pb-0">
+                    <button onclick="filterDocs('all', this)" class="filter-btn active whitespace-nowrap px-4 py-2 rounded-lg text-xs font-bold transition-all bg-brand-cyan text-black border border-transparent">Todos</button>
+                </div>
+            </div>
+            <div id="docs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full py-12 text-center text-gray-500"><i class="fa-solid fa-circle-notch fa-spin text-2xl mb-4"></i><p>Carregando documentos...</p></div>
+            </div>
+            <div id="no-results" class="hidden text-center py-16 bg-[#111] rounded-2xl border border-brand-border mt-6"><i class="fa-solid fa-folder-open text-4xl text-gray-600 mb-4"></i><h3 class="text-white font-bold text-lg">Nada encontrado</h3></div>
+        </div>
+    </main>
+
+    <footer class="border-t border-brand-border bg-[#020202] pt-12 pb-8 relative z-20 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div>
+                    <a href="https://linkwaveconnect.com.br" class="flex items-center justify-center md:justify-start gap-3 mb-4 opacity-60 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                        <img src="https://linkwaveconnect.com.br/assets/linkwaveconnect.png" alt="Linkwave Connect" class="h-12 md:h-16 w-auto">
+                        <div class="h-6 w-px bg-gray-600"></div>
+                        <span class="font-display font-bold text-white text-sm md:text-base">Transparência</span>
+                    </a>
+                    <p class="text-sm text-gray-600 max-w-sm">Compromisso com a governança, ética e transparência em nossas operações de conectividade e infraestrutura.</p>
+                </div>
+                <div class="flex flex-col gap-3 w-full md:w-auto min-w-[220px]">
+                    <a href="https://wa.me/551145804215?text=Olá! Gostaria de falar com a Ouvidoria / Transparência." target="_blank" class="bg-brand-green hover:bg-green-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Ouvidoria
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 font-mono">
+                <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+                    <p>&copy; <span id="copyright-year">2024</span> Linkwave Connect LTDA. Todos os direitos reservados.</p>
+                    <p class="font-bold text-gray-500">CNPJ: 53.108.042/0001-07</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let allDocs = [];
+        let currentFilter = 'all';
+
+        async function loadDocuments() {
+            try {
+                const ts = new Date().getTime();
+                const response = await fetch(`transparencia.json?t=${ts}`);
+                const data = await response.json();
+                allDocs = data.documents;
+                generateFilterButtons();
+                applyFilters();
+            } catch (error) {
+                document.getElementById('docs-container').innerHTML = `<p class="col-span-full py-12 text-center text-red-500">Erro ao carregar documentos.</p>`;
+            }
+        }
+
+        function generateFilterButtons() {
+            const container = document.getElementById('category-filters');
+            const uniqueCategories = [...new Set(allDocs.map(doc => doc.category.toLowerCase()))];
+            const catNames = { 'regulatorio': 'Regulatório', 'termos': 'Termos / SLA', 'institucional': 'Institucional', 'financeiro': 'Financeiro' };
+            let html = `<button onclick="filterDocs('all', this)" class="filter-btn active whitespace-nowrap px-4 py-2 rounded-lg text-xs font-bold transition-all bg-brand-cyan text-black border border-transparent">Todos</button>`;
+            uniqueCategories.forEach(cat => {
+                const displayName = catNames[cat] || cat.charAt(0).toUpperCase() + cat.slice(1);
+                html += `<button onclick="filterDocs('${cat}', this)" class="filter-btn whitespace-nowrap px-4 py-2 rounded-lg text-xs font-bold transition-all bg-transparent border border-brand-border text-gray-300 hover:bg-[#111]">${displayName}</button>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function getIconForType(type) {
+            const types = { 'pdf': '<i class="fa-solid fa-file-pdf text-red-400"></i>', 'zip': '<i class="fa-solid fa-file-zipper text-brand-cyan"></i>', 'doc': '<i class="fa-solid fa-file-word text-blue-400"></i>' };
+            return types[type.toLowerCase()] || '<i class="fa-solid fa-file text-gray-400"></i>';
+        }
+
+        function getCategoryBadge(category) {
+            const cats = { 'regulatorio': '<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-bold uppercase"><i class="fa-solid fa-scale-balanced"></i> Regulatório</span>', 'termos': '<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase"><i class="fa-solid fa-file-signature"></i> Termos / SLA</span>', 'institucional': '<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase"><i class="fa-solid fa-building"></i> Institucional</span>' };
+            return cats[category.toLowerCase()] || `<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-gray-500/10 border border-gray-500/20 text-gray-400 text-[10px] font-bold uppercase">${category}</span>`;
+        }
+
+        function formatBytes(bytes, decimals = 1) {
+            if (!+bytes) return '0 B';
+            const k = 1024, dm = decimals < 0 ? 0 : decimals, sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+        }
+
+        async function fetchFileSize(url, elementId) {
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                const el = document.getElementById(elementId);
+                if (response.ok && el) {
+                    const size = response.headers.get('content-length');
+                    el.innerHTML = `<i class="fa-solid fa-hard-drive text-gray-600"></i> ${size ? formatBytes(size) : 'n/a'}`;
+                }
+            } catch (error) { if(document.getElementById(elementId)) document.getElementById(elementId).innerHTML = 'Externo'; }
+        }
+
+        function renderDocs(docs) {
+            const container = document.getElementById('docs-container');
+            const noResults = document.getElementById('no-results');
+            if (docs.length === 0) { container.innerHTML = ''; noResults.classList.remove('hidden'); return; }
+            noResults.classList.add('hidden');
+            container.innerHTML = docs.map((doc, index) => {
+                const btnText = doc.type.toLowerCase() === 'pdf' ? 'Baixar PDF' : 'Baixar ZIP';
+                const sizeId = `size-display-${index}`;
+                return `
+                <div class="glass-card p-5 md:p-6 rounded-2xl flex flex-col h-full group hover:border-brand-cyan/40">
+                    <div class="flex justify-between items-center mb-5">${getCategoryBadge(doc.category)}<span class="text-[10px] text-gray-500 font-mono bg-[#050505] px-2 py-1 rounded border border-gray-800">${doc.date}</span></div>
+                    <div class="flex items-start gap-4 mb-4 flex-grow">
+                        <div class="w-12 h-12 shrink-0 rounded-xl bg-[#111] border border-brand-border flex items-center justify-center text-2xl group-hover:bg-[#1a1a1a] transition-colors">${getIconForType(doc.type)}</div>
+                        <div class="flex flex-col"><h3 class="text-sm md:text-base font-bold text-white mb-2 leading-snug group-hover:text-brand-cyan transition-colors">${doc.title}</h3><div class="flex items-center gap-2 mt-1"><span class="text-[9px] font-bold text-gray-300 uppercase bg-gray-800 border border-gray-700 px-2 py-0.5 rounded">${doc.type}</span><span id="${sizeId}" class="text-[10px] text-gray-500 flex items-center gap-1">Calc...</span></div></div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-brand-border/50"><a href="${doc.url}" target="_blank" download class="w-full bg-brand-cyan/10 hover:bg-brand-cyan text-brand-cyan hover:text-black border border-brand-cyan/30 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2"><i class="fa-solid fa-download"></i> ${btnText}</a></div>
+                </div>`;
+            }).join('');
+            docs.forEach((doc, index) => fetchFileSize(doc.url, `size-display-${index}`));
+        }
+
+        function applyFilters() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = allDocs.filter(doc => (currentFilter === 'all' || doc.category === currentFilter) && doc.title.toLowerCase().includes(term));
+            renderDocs(filtered);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDocuments();
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            window.filterDocs = (cat, btn) => {
+                currentFilter = cat;
+                document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('bg-brand-cyan', 'text-black'); b.classList.add('bg-transparent', 'text-gray-300'); });
+                if(btn){ btn.classList.remove('bg-transparent', 'text-gray-300'); btn.classList.add('bg-brand-cyan', 'text-black'); }
+                applyFilters();
+            };
+            const yr = new Date().getFullYear();
+            if(document.getElementById('copyright-year')) document.getElementById('copyright-year').textContent = yr > 2023 ? `2023-${yr}` : '2023';
+        });
+    </script>
+</body>
+</html>
